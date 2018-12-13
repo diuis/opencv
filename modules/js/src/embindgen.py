@@ -71,10 +71,14 @@ from __future__ import print_function
 import sys, re, os
 from templates import *
 
+try:
+    set
+except NameError:
+    from sets import Set as set
+
 if sys.version_info[0] >= 3:
     from io import StringIO
 else:
-    from sets import Set
     from cStringIO import StringIO
 
 
@@ -200,7 +204,7 @@ class ClassInfo(object):
         self.consts = {}
         customname = False
         self.jsfuncs = {}
-        self.constructor_arg_num = Set()
+        self.constructor_arg_num = set()
 
         self.has_smart_ptr = False
 
