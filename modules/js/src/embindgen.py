@@ -70,11 +70,11 @@
 from __future__ import print_function
 import sys, re, os
 from templates import *
-from sets import Set
 
 if sys.version_info[0] >= 3:
     from io import StringIO
 else:
+    from sets import Set
     from cStringIO import StringIO
 
 
